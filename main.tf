@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.storage_syncs : {
       for k2, v2 in coalesce(v1.storage_sync_groups, {}) :
       "${k1}/${k2}" => merge(v2, {
-        storage_sync_id = module.storage_syncs.storage_syncs["${k1}"].id
+        storage_sync_id = module.storage_syncs.storage_syncs_id["${k1}"]
       })
     }
   ]...)
@@ -15,7 +15,7 @@ locals {
       for k2, v2 in coalesce(v1.storage_sync_groups, {}) : {
         for k3, v3 in coalesce(v2.storage_sync_cloud_endpoints, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          storage_sync_group_id = module.storage_sync_groups.storage_sync_groups["${k1}/${k2}"].id
+          storage_sync_group_id = module.storage_sync_groups.storage_sync_groups_id["${k1}/${k2}"]
         })
       }
     ]...)
@@ -26,7 +26,7 @@ locals {
       for k2, v2 in coalesce(v1.storage_sync_groups, {}) : {
         for k3, v3 in coalesce(v2.storage_sync_server_endpoints, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
-          storage_sync_group_id = module.storage_sync_groups.storage_sync_groups["${k1}/${k2}"].id
+          storage_sync_group_id = module.storage_sync_groups.storage_sync_groups_id["${k1}/${k2}"]
         })
       }
     ]...)
