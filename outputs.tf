@@ -1,4 +1,9 @@
 # --- azurerm_storage_sync ---
+output "storage_syncs_id" {
+  description = "Map of id values across all storage_syncs, keyed the same as var.storage_syncs"
+  value       = module.storage_syncs.storage_syncs_id
+}
+
 output "storage_syncs_incoming_traffic_policy" {
   description = "Map of incoming_traffic_policy values across all storage_syncs, keyed the same as var.storage_syncs"
   value       = module.storage_syncs.storage_syncs_incoming_traffic_policy
@@ -30,6 +35,11 @@ output "storage_syncs_tags" {
 }
 
 # --- azurerm_storage_sync_group ---
+output "storage_sync_groups_id" {
+  description = "Map of id values across all storage_sync_groups, keyed the same as var.storage_sync_groups"
+  value       = module.storage_sync_groups.storage_sync_groups_id
+}
+
 output "storage_sync_groups_name" {
   description = "Map of name values across all storage_sync_groups, keyed the same as var.storage_sync_groups"
   value       = module.storage_sync_groups.storage_sync_groups_name
@@ -41,6 +51,11 @@ output "storage_sync_groups_storage_sync_id" {
 }
 
 # --- azurerm_storage_sync_cloud_endpoint ---
+output "storage_sync_cloud_endpoints_id" {
+  description = "Map of id values across all storage_sync_cloud_endpoints, keyed the same as var.storage_sync_cloud_endpoints"
+  value       = module.storage_sync_cloud_endpoints.storage_sync_cloud_endpoints_id
+}
+
 output "storage_sync_cloud_endpoints_file_share_name" {
   description = "Map of file_share_name values across all storage_sync_cloud_endpoints, keyed the same as var.storage_sync_cloud_endpoints"
   value       = module.storage_sync_cloud_endpoints.storage_sync_cloud_endpoints_file_share_name
@@ -67,6 +82,11 @@ output "storage_sync_cloud_endpoints_storage_sync_group_id" {
 }
 
 # --- azurerm_storage_sync_server_endpoint ---
+output "storage_sync_server_endpoints_id" {
+  description = "Map of id values across all storage_sync_server_endpoints, keyed the same as var.storage_sync_server_endpoints"
+  value       = module.storage_sync_server_endpoints.storage_sync_server_endpoints_id
+}
+
 output "storage_sync_server_endpoints_cloud_tiering_enabled" {
   description = "Map of cloud_tiering_enabled values across all storage_sync_server_endpoints, keyed the same as var.storage_sync_server_endpoints"
   value       = module.storage_sync_server_endpoints.storage_sync_server_endpoints_cloud_tiering_enabled
