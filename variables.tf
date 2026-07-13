@@ -35,7 +35,7 @@ EOT
     location                = string
     name                    = string
     resource_group_name     = string
-    incoming_traffic_policy = optional(string) # Default: "AllowAllTraffic"
+    incoming_traffic_policy = optional(string)
     tags                    = optional(map(string))
     storage_sync_groups = optional(map(object({
       name = string
@@ -49,11 +49,11 @@ EOT
         name                       = string
         registered_server_id       = string
         server_local_path          = string
-        cloud_tiering_enabled      = optional(bool)   # Default: false
-        initial_download_policy    = optional(string) # Default: "NamespaceThenModifiedFiles"
-        local_cache_mode           = optional(string) # Default: "UpdateLocallyCachedFiles"
+        cloud_tiering_enabled      = optional(bool)
+        initial_download_policy    = optional(string)
+        local_cache_mode           = optional(string)
         tier_files_older_than_days = optional(number)
-        volume_free_space_percent  = optional(number) # Default: 20
+        volume_free_space_percent  = optional(number)
       })))
     })))
   }))
