@@ -34,24 +34,24 @@ locals {
 }
 
 module "storage_syncs" {
-  source        = "git::https://github.com/AeternaModules/azurerm_storage_sync.git?ref=v4.80.0"
+  source        = "git::https://github.com/AeternaModules/azurerm_storage_sync.git?ref=v4.81.0"
   storage_syncs = local.storage_syncs
 }
 
 module "storage_sync_groups" {
-  source              = "git::https://github.com/AeternaModules/azurerm_storage_sync_group.git?ref=v4.80.0"
+  source              = "git::https://github.com/AeternaModules/azurerm_storage_sync_group.git?ref=v4.81.0"
   storage_sync_groups = local.storage_sync_groups
   depends_on          = [module.storage_syncs]
 }
 
 module "storage_sync_cloud_endpoints" {
-  source                       = "git::https://github.com/AeternaModules/azurerm_storage_sync_cloud_endpoint.git?ref=v4.80.0"
+  source                       = "git::https://github.com/AeternaModules/azurerm_storage_sync_cloud_endpoint.git?ref=v4.81.0"
   storage_sync_cloud_endpoints = local.storage_sync_cloud_endpoints
   depends_on                   = [module.storage_sync_groups]
 }
 
 module "storage_sync_server_endpoints" {
-  source                        = "git::https://github.com/AeternaModules/azurerm_storage_sync_server_endpoint.git?ref=v4.80.0"
+  source                        = "git::https://github.com/AeternaModules/azurerm_storage_sync_server_endpoint.git?ref=v4.81.0"
   storage_sync_server_endpoints = local.storage_sync_server_endpoints
   depends_on                    = [module.storage_sync_groups]
 }
